@@ -1,0 +1,166 @@
+@import '@fontsource/roboto';
+
+/* color palette from <https://github.com/vuejs/theme> */
+:root {
+  --z-c-white: #ffffff;
+  --z-c-white-soft: #f8f8f8;
+  --z-c-white-mute: #f2f2f2;
+
+  --z-c-black: #0D0D0D;
+  --z-c-black-mid: #1A1A1A;
+  --z-c-black-soft: #191919;
+  --z-c-black-mute: #676767;
+
+  --z-c-indian-khaki: #3BBEFF;
+  --z-c-blaze-orange: #F29238;
+  --z-c-limeade: #45B06A;
+  --z-c-starship: #93FAAA;
+  --z-c-hollywood-cerise: #9945FF;
+  --z-c-guardsman-red: #C2292E;
+
+}
+
+/* semantic color variables for this project */
+:root {
+  --color-background: var(--z-c-black);
+  --color-background-mid: var(--z-c-black-mid);
+  --color-background-soft: var(--z-c-black-soft);
+  --color-background-mute: var(--z-c-black-mute);
+
+  --color-heading: var(--z-c-white);
+  --color-text: var(--z-c-white);
+
+  --section-gap: 160px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: var(--z-c-black);
+    --color-background-soft: var(--z-c-black-soft);
+    --color-background-mute: var(--z-c-black-mute);
+
+    --color-heading: var(--z-c-white);
+    --color-text: var(--z-c-white);
+  }
+}
+
+:root {
+  --font-main: 'roboto', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+  --font-s-l: 32px;
+  --font-s-m: 18px;
+  --font-s-sl: 12px;
+  --font-s-sm: 11px;
+  --font-s-ss: 10px;
+}
+
+/* --- CSS Reset ---------------------------------------------------- */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* Prevent font size inflation and remove default margin */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1;
+  margin: 0;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-main);
+}
+
+/* Set core body defaults */
+h1, h2, h3, h4, h5, h6, p, figure, blockquote, dl, dd {
+  margin-block-end: 0;
+  overflow-wrap: break-word;
+}
+
+/* Improve line wrapping  */
+p {
+  text-wrap: pretty;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+/* Remove list styles on ul, ol elements with a list role */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+video,
+canvas,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has an anchor target should have a scroll offset */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Create a root stacking context */
+#root, #__next {
+  isolation: isolate;
+}
