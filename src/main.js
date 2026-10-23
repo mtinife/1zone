@@ -7,15 +7,17 @@ import App from './App.vue'
 import { library } from '@fortawesome/fontawesome-svg-core'
 
 // Import specific icons you need
-import { faGear, faHandHoldingDollar, faPiggyBank, faCoins, faReceipt, faSackXmark } from '@fortawesome/free-solid-svg-icons'
+import { faEllipsisVertical, faGear, faHandHoldingDollar, faPiggyBank, faCoins, faReceipt, faSackXmark } from '@fortawesome/free-solid-svg-icons'
 
 // Import the Font Awesome Vue component
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 // Add icons to the library
-library.add(faGear, faHandHoldingDollar, faPiggyBank, faCoins, faReceipt, faSackXmark)
+library.add(faEllipsisVertical, faGear, faHandHoldingDollar, faPiggyBank, faCoins, faReceipt, faSackXmark)
 
-createApp(App)
-  .component('font-awesome-icon', FontAwesomeIcon)
-  .mount('#app')
+const oneZoneApp = createApp(App)
+
+oneZoneApp.component('font-awesome-icon', FontAwesomeIcon)
+
+oneZoneApp.mount('#app')
 
