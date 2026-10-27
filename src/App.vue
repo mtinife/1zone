@@ -9,8 +9,8 @@ const isOpenMenu = ref(false)
 
 <template>
   <header class="oz__header">
-    <section class="oz__header__details">
-      <div class="oz__header__details__icon" :class="{ 'open': isOpenMenu }" @click="isOpenMenu = !isOpenMenu">
+    <section class="oz__header__left">
+      <div class="oz__header__left__icon" :class="{ 'open': isOpenMenu }" @click="isOpenMenu = !isOpenMenu">
         <span></span>
         <span></span>
         <span></span>
@@ -21,24 +21,28 @@ const isOpenMenu = ref(false)
         <span></span>
         <span></span>
       </div>
-      <img class="oz__header__details__logo" alt="" src="" />
-      <details class="oz__header__details__type">
-        <summary>app type</summary>
-        <ul>
-          <li><a>budget tracker</a></li>
-          <li><a>notes</a></li>
-          <li><a>life tracker</a></li>
-        </ul>
-      </details>
-      <details class="oz__header__details__year">
-        <summary>years</summary>
-        <ul>
-          <li><a>2026</a></li>
-          <li><a>2025</a></li>
-          <li><a>2024</a></li>
-          <li><a>2023</a></li>
-        </ul>
-      </details>
+      <img class="oz__header__left__logo" alt="" src="" />
+      <! -- make these on click -->
+        <div class="oz__header__dropdown">
+          <button class="oz__header__dropdown__button">app type
+            <font-awesome-icon icon="fa-solid fa-caret-down" />
+          </button>
+          <div class="oz__header__dropdown__content">
+            <a href="#">budget tracker</a>
+            <a href="#">notes</a>
+            <a href="#">life tracker</a>
+          </div>
+        </div>
+        <div class="oz__header__dropdown">
+          <button class="oz__header__dropdown__button">year
+            <font-awesome-icon icon="fa-solid fa-caret-down" />
+          </button>
+          <div class="oz__header__dropdown__content">
+            <a href="#">2026</a>
+            <a href="#">2027</a>
+            <a href="#">2028</a>
+          </div>
+        </div>
     </section>
     <section class="oz__header__nav">
       <nav>
@@ -51,9 +55,9 @@ const isOpenMenu = ref(false)
       </nav>
     </section>
     <section class="oz__header__data">
-      <a class="oz__header__data__import">import data</a>
-      <a class="oz__header__data__export">export data</a>
-      <a class="oz__header__data__icon">
+      <a href="#" class="oz__header__data__import">import data</a>
+      <a href="#" class="oz__header__data__export">Export data</a>
+      <a href="#" class="oz__header__data__icon">
         <font-awesome-icon icon="fa-solid fa-ellipsis-vertical" />
       </a>
     </section>
@@ -156,7 +160,7 @@ const isOpenMenu = ref(false)
 
 <style scoped>
 /* Nine circle menu  */
-.oz__header__details__icon {
+.oz__header__left__icon {
   width: 30px;
   height: 30px;
   position: relative;
@@ -165,7 +169,7 @@ const isOpenMenu = ref(false)
   cursor: pointer;
 }
 
-.oz__header__details__icon span {
+.oz__header__left__icon span {
   width: 5px;
   height: 5px;
   background-color: var(--color-text);
@@ -174,86 +178,86 @@ const isOpenMenu = ref(false)
   position: absolute;
 }
 
-.oz__header__details__icon:hover span {
+.oz__header__left__icon:hover span {
   transform: scale(1.2);
   transition: 350ms cubic-bezier(0.8, 0.5, 0.2, 1.4);
 }
 
-.oz__header__details__icon span:nth-child(1) {
+.oz__header__left__icon span:nth-child(1) {
   top: 0px;
   left: 0px;
 }
 
-.oz__header__details__icon span:nth-child(2) {
+.oz__header__left__icon span:nth-child(2) {
   top: 0px;
   left: 12px;
 }
 
-.oz__header__details__icon span:nth-child(3) {
+.oz__header__left__icon span:nth-child(3) {
   top: 0px;
   right: 0px;
 }
 
-.oz__header__details__icon span:nth-child(4) {
+.oz__header__left__icon span:nth-child(4) {
   top: 12px;
   left: 0px;
 }
 
-.oz__header__details__icon span:nth-child(5) {
+.oz__header__left__icon span:nth-child(5) {
   position: absolute;
   top: 12px;
   left: 12px;
 }
 
-.oz__header__details__icon span:nth-child(6) {
+.oz__header__left__icon span:nth-child(6) {
   top: 12px;
   right: 0px;
 }
 
-.oz__header__details__icon span:nth-child(7) {
+.oz__header__left__icon span:nth-child(7) {
   left: 0px;
   bottom: 0px;
 }
 
-.oz__header__details__icon span:nth-child(8) {
+.oz__header__left__icon span:nth-child(8) {
   position: absolute;
   left: 12px;
   bottom: 0px;
 }
 
-.oz__header__details__icon span:nth-child(9) {
+.oz__header__left__icon span:nth-child(9) {
   right: 0px;
   bottom: 0px;
 }
 
-.oz__header__details__icon.open {
+.oz__header__left__icon.open {
   transform: rotate(180deg);
   transition: 0.2s cubic-bezier(0.8, 0.5, 0.2, 1.4);
   cursor: pointer;
 }
 
-.oz__header__details__icon.open span {
+.oz__header__left__icon.open span {
   transition: 0.5s cubic-bezier(0.8, 0.5, 0.2, 1.4);
   transition-delay: 200ms;
   border-radius: 50%;
 }
 
-.oz__header__details__icon.open span:nth-child(2) {
+.oz__header__left__icon.open span:nth-child(2) {
   top: 6px;
   left: 6px;
 }
 
-.oz__header__details__icon.open span:nth-child(4) {
+.oz__header__left__icon.open span:nth-child(4) {
   top: 18px;
   left: 6px;
 }
 
-.oz__header__details__icon.open span:nth-child(6) {
+.oz__header__left__icon.open span:nth-child(6) {
   top: 6px;
   right: 6px;
 }
 
-.oz__header__details__icon.open span:nth-child(8) {
+.oz__header__left__icon.open span:nth-child(8) {
   left: 18px;
   bottom: 6px;
 }
@@ -265,11 +269,70 @@ const isOpenMenu = ref(false)
   align-items: center;
 }
 
-.oz__header__details,
+.oz__header__left,
 .oz__header__nav nav ul,
 .oz__overview__tabs {
   display: flex;
   align-items: center;
+}
+
+.oz__header__dropdown {
+  position: relative;
+}
+
+.oz__header__dropdown__button {
+  background-color: transparent;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  text-transform: capitalize;
+  border: none;
+  cursor: pointer;
+}
+
+/* Dropdown content */
+.oz__header__dropdown__content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 200px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+/* Links inside dropdown content */
+.oz__header__dropdown__content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.oz__header__dropdown__content a:hover {
+  background-color: #f1f1f1
+}
+
+/* Show the dropdown content on hover */
+.oz__header__dropdown:hover .oz__header__dropdown__content {
+  display: block;
+}
+
+/* Change background color of dropdown button on hover */
+.oz__header__dropdown:hover .oz__header__dropdown__button {
+  background-color: #3e8e41;
+}
+
+.oz__header__nav nav ul li {
+  padding: 16px;
+}
+
+.oz__header__nav nav ul li {
+  text-transform: capitalize;
+}
+
+.oz__header__data a {
+  padding: 16px;
+  text-transform: capitalize;
 }
 
 .oz__overview__tabs {
